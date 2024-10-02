@@ -19,7 +19,6 @@ const useGetCategories = () => {
             })
             .catch((err) => {
                 setIsError(err)
-                console.log(err)
             })
             .finally(() => {
                 setLoading(false)

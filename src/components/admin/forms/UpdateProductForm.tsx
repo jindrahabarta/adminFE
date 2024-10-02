@@ -29,7 +29,7 @@ interface props {
     handleClick: () => void
 }
 
-const EditProductForm = ({ selectedProduct, handleClick }: props) => {
+const UpdateProductForm = ({ selectedProduct, handleClick }: props) => {
     const { categories } = useGetCategories()
     const navigate = useNavigate()
     const {
@@ -112,25 +112,21 @@ const EditProductForm = ({ selectedProduct, handleClick }: props) => {
 
             <div>
                 <label htmlFor='category'>Category</label>
-                <select
-                    {...register('category')}
-                    id='category'
-                    className={styles.addProdInput}
-                >
-                    {categories?.map((category) => (
-                        <option
-                            selected={
-                                category._id === selectedProduct.categoryId
-                                    ? true
-                                    : false
-                            }
-                            key={category._id}
-                            value={category._id}
-                        >
-                            {category.name}
-                        </option>
-                    ))}
-                </select>
+
+                {categories.length > 0 && (
+                    <select
+                        {...register('category')}
+                        id='category'
+                        className={styles.addProdInput}
+                        defaultValue={selectedProduct.categoryId}
+                    >
+                        {categories?.map((category) => (
+                            <option key={category._id} value={category._id}>
+                                {category.name}
+                            </option>
+                        ))}
+                    </select>
+                )}
             </div>
 
             <div className='flex gap-1 items-baseline'>
@@ -209,4 +205,4 @@ const EditProductForm = ({ selectedProduct, handleClick }: props) => {
     )
 }
 
-export default EditProductForm
+export default UpdateProductForm

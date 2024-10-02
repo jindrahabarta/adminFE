@@ -30,22 +30,40 @@ const ProductsTable = ({
     const location = useLocation()
 
     useEffect(() => {
+        console.log('searching')
+
         const searchParams = new URLSearchParams(location.search)
         const foundCategory = searchParams.get('category')
 
-        if (!location.search || foundCategory === 'all') {
-            return setFilteredProducts(products)
-        }
+        const foundPhrase = searchParams.get('searchPhrase')
 
-        const selectedCategory = categories?.find((category) => {
-            return category.name === foundCategory
-        })?._id
-
-        setFilteredProducts(
-            products.filter((prod) => {
-                return prod.categoryId === selectedCategory
+        if (foundPhrase) {
+            const foundProducts = products.filter((product) => {
+                if (
+                    product.productName
+                        .toLocaleLowerCase()
+                        .includes(foundPhrase)
+                ) {
+                    return product
+                }
             })
-        )
+
+            setFilteredProducts(foundProducts)
+        } else {
+            if (!location.search || foundCategory === 'all') {
+                return setFilteredProducts(products)
+            }
+
+            const selectedCategory = categories?.find((category) => {
+                return category.name === foundCategory
+            })?._id
+
+            setFilteredProducts(
+                products.filter((prod) => {
+                    return prod.categoryId === selectedCategory
+                })
+            )
+        }
     }, [location.search, categories, products])
 
     return (

@@ -33,14 +33,14 @@ const ProductDetail = () => {
                 <p className=' mb-1'>go back</p>
             </div>
             <div className='flex flex-col sm:flex-row  gap-4 '>
-                <div className='w-full aspect-square overflow-hidden rounded-md'>
+                <div className='flex-1 aspect-square overflow-hidden rounded-md'>
                     <img
                         className='w-full h-full object-cover'
                         src={selectedProduct?.imageUrl}
                         alt={selectedProduct?.productName}
                     />
                 </div>
-                <div className='w-full min-h-full flex flex-col justify-between'>
+                <div className=' flex-2 min-h-full flex flex-col justify-between'>
                     <div>
                         <h1>{selectedProduct?.productName}</h1>
                         <p>{selectedProduct?.desc}</p>

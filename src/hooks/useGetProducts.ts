@@ -14,6 +14,7 @@ type Product = {
 const useGetProducts = () => {
     const [products, setProducts] = useState<Product[]>([])
     const [loading, setLoading] = useState(true)
+    const [error, setError] = useState()
 
     useEffect(() => {
         axios
@@ -21,12 +22,15 @@ const useGetProducts = () => {
             .then((res) => {
                 setProducts(res.data)
             })
+            .catch((err) => {
+                setError(err)
+            })
             .finally(() => {
                 setLoading(false)
             })
     }, [])
 
-    return { products, loading }
+    return { products, loading, error }
 }
 
 export default useGetProducts

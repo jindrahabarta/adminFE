@@ -45,10 +45,12 @@ const LogInForm = () => {
                     secure: true,
                     sameSite: 'Strict',
                 })
+
                 setAuth({
                     isVerified: true,
                     user: {
                         username: res.data.user.username,
+                        role: res.data.user.role,
                     },
                 })
             })

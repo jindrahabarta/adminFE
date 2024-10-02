@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
 import EditHandlers from './ui/EditHandlers'
 import ArrowIco from '../icons/ArrowIco'
-import EditProductForm from './forms/EditProductForm'
+import UpdateProductForm from './forms/UpdateProductForm'
 import toast from 'react-hot-toast'
 import useGetCategories from '../../hooks/useGetCategories'
 
@@ -50,10 +50,10 @@ const ProductsManagerDetail = () => {
 
     if (editFormOpened && selectedProduct) {
         return (
-            <EditProductForm
+            <UpdateProductForm
                 selectedProduct={selectedProduct}
                 handleClick={() => seteditFormOpened(false)}
-            ></EditProductForm>
+            ></UpdateProductForm>
         )
     }
 

@@ -39,7 +39,12 @@ const Navbar = () => {
             </div>
             <div className='flex gap-2 items-center'>
                 {auth.isVerified ? (
-                    <p>Logged user: {auth.user.username}</p>
+                    <div>
+                        <p>
+                            Logged user: {auth.user.username}, Role:
+                            {auth.user.role}
+                        </p>
+                    </div>
                 ) : (
                     <Link to='/admin'>Log in</Link>
                 )}

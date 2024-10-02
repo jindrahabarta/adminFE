@@ -6,6 +6,7 @@ type authUser = {
     isVerified: boolean
     user: {
         username: string
+        role: string
     }
 }
 interface AuthInterface {
@@ -16,7 +17,7 @@ interface AuthInterface {
 export const AuthContext = createContext<AuthInterface>({
     auth: {
         isVerified: false,
-        user: { username: '' },
+        user: { username: '', role: '' },
     },
     setAuth: () => {},
 })
@@ -26,6 +27,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         isVerified: false,
         user: {
             username: '',
+            role: '',
         },
     })
 
@@ -47,6 +49,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
                     isVerified: true,
                     user: {
                         username: res.data.username,
+                        role: res.data.role,
                     },
                 })
             })
@@ -62,7 +65,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
                         })
                         .then((res) => {
                             const newToken = res.data.newToken
-
                             Cookies.set('auth', newToken, {
                                 expires: 1,
                                 secure: true,
@@ -72,6 +74,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
                                 isVerified: true,
                                 user: {
                                     username: res.data.username,
+                                    role: res.data.role,
                                 },
                             })
                         })
