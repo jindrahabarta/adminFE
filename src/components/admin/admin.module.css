@@ -1,0 +1,34 @@
+.form {
+    @apply border-gray-300 border rounded-md p-4;
+}
+.inputStyle {
+    @apply flex px-1 mt-2 py-1 gap-1 border-gray-300 border rounded-md shadow-sm duration-200 focus-within:border-black;
+}
+.input {
+    @apply outline-none;
+}
+.button {
+    @apply rounded-md text-white bg-blue-600  hover:bg-blue-500 shadow-sm duration-200;
+}
+.error {
+    @apply text-sm text-right text-red-500;
+}
+
+.adminNavBtn {
+    @apply px-4 py-1 text-white bg-blue-300 hover:bg-blue-500 duration-200 rounded-lg;
+}
+
+.adminNavBtnActive {
+    @apply px-4 py-1 text-white bg-blue-600 rounded-lg;
+}
+
+.addProdForm {
+    @apply w-full border-gray-300 border rounded-md p-4;
+}
+.addProdInput {
+    @apply w-full px-1 py-1 gap-1 border-gray-300 border rounded-md shadow-sm duration-200 focus-within:border-black outline-none;
+}
+
+.addProdInputImage {
+    @apply w-full  px-1 py-1 gap-1 border-gray-300 border rounded-md shadow-sm duration-200 focus-within:border-black outline-none;
+}
