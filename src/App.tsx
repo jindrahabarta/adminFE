@@ -39,7 +39,7 @@ function App() {
         <BrowserRouter>
             <Toaster position='bottom-right' />
             <Navbar></Navbar>
-            <div className='px-4 min-h-screen max-w-[2000px] mx-auto'>
+            <div className='px-4 pt-16  min-h-screen max-w-7xl mx-auto overflow-hidden'>
                 <Routes>
                     <Route path='/' element={<Home></Home>}></Route>
                     <Route

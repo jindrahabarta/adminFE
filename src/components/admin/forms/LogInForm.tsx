@@ -31,7 +31,7 @@ const LogInForm = () => {
         }
 
         const auth = axios
-            .post('http://localhost:3000/auth/login', user)
+            .post('https://adminbe.onrender.com/auth/login', user)
             .then((res) => {
                 const refreshToken = res.data.refreshToken
 
@@ -71,7 +71,7 @@ const LogInForm = () => {
     }
 
     return (
-        <div className='flex justify-center items-center h-screen'>
+        <div className='flex justify-center items-center h-full'>
             <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
                 <div className={styles.inputStyle}>
                     <UserIco className='stroke-gray-400 w-5'></UserIco>

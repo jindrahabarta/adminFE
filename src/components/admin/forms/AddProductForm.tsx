@@ -38,7 +38,7 @@ const AddProductForm = () => {
         formData.append('mainImage', mainImage[0])
 
         const sendPromise = axios
-            .post('http://localhost:3000/products', formData, {
+            .post('https://adminbe.onrender.com/products', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

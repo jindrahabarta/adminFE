@@ -18,7 +18,7 @@ const useGetProducts = () => {
 
     useEffect(() => {
         axios
-            .get('http://localhost:3000/products')
+            .get('https://adminbe.onrender.com/products')
             .then((res) => {
                 setProducts(res.data)
             })

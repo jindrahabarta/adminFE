@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
         axios
             .post(
-                'http://localhost:3000/auth/authorize',
+                'https://adminbe.onrender.com/auth/authorize',
                 {},
                 {
                     headers: {
@@ -60,7 +60,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
                     if (!refreshToken) return
 
                     axios
-                        .post('http://localhost:3000/auth/refresh', {
+                        .post('https://adminbe.onrender.com/auth/refresh', {
                             refreshToken: refreshToken,
                         })
                         .then((res) => {

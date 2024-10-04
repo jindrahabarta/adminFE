@@ -25,7 +25,7 @@ const AddCategoryForm = ({
     } = useForm<Inputs>()
     const onSubmit: SubmitHandler<Inputs> = (data) => {
         const postPromise = axios
-            .post('http://localhost:3000/categories', data)
+            .post('https://adminbe.onrender.com/categories', data)
             .then((res) => {
                 passCategories(res.data)
                 reset()

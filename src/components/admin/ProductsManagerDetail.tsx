@@ -25,14 +25,16 @@ const ProductsManagerDetail = () => {
     const params = useParams()
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/products/${params.id}`).then((res) => {
-            setSelectedProduct(res.data[0])
-        })
+        axios
+            .get(`https://adminbe.onrender.com/products/${params.id}`)
+            .then((res) => {
+                setSelectedProduct(res.data)
+            })
     }, [params.id])
 
     const deleteProduct = () => {
         const deletePromise = axios
-            .delete(`http://localhost:3000/products/${params.id}`)
+            .delete(`https://adminbe.onrender.com/products/${params.id}`)
             .then(() => {
                 navigate('/admin/products')
             })

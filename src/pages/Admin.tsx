@@ -15,7 +15,7 @@ const Admin = () => {
 
     if (auth.isVerified) {
         return (
-            <div className='pt-20'>
+            <div>
                 <AdminNav></AdminNav>
                 <div className='flex justify-center h-full'>
                     <div className='md:w-1/2 w-full'>
@@ -27,7 +27,7 @@ const Admin = () => {
     }
 
     return (
-        <div className='flex justify-center h-full'>
+        <div className='pt-20'>
             <LogInForm></LogInForm>
         </div>
     )

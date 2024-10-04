@@ -19,7 +19,7 @@ const CategoriesManager = () => {
 
     useEffect(() => {
         axios
-            .get('http://localhost:3000/categories')
+            .get('https://adminbe.onrender.com/categories')
             .then((res) => {
                 setCategories(res.data)
             })
@@ -30,7 +30,7 @@ const CategoriesManager = () => {
 
     const deleteCategory: React.MouseEventHandler<HTMLButtonElement> = (id) => {
         const deletePromise = axios
-            .delete(`http://localhost:3000/categories/${id}`)
+            .delete(`https://adminbe.onrender.com/categories/${id}`)
             .then((res) => {
                 const newCategories = categories?.filter((category) => {
                     return category._id !== res.data._id

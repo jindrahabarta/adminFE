@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import ArrowIco from '../icons/ArrowIco'
 
@@ -18,10 +18,12 @@ const ProductDetail = () => {
     const params = useParams()
     const navigate = useNavigate()
     useEffect(() => {
-        axios.get(`http://localhost:3000/products/${params.id}`).then((res) => {
-            setSelectedProduct(res.data[0])
-        })
-    }, [])
+        axios
+            .get(`https://adminbe.onrender.com/products/${params.id}`)
+            .then((res) => {
+                setSelectedProduct(res.data)
+            })
+    }, [params.id])
 
     return (
         <section className='pt-12'>

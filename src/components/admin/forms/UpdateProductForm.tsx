@@ -57,7 +57,7 @@ const UpdateProductForm = ({ selectedProduct, handleClick }: props) => {
         }
 
         const sendPromise = axios
-            .put('http://localhost:3000/products', formData, {
+            .put('https://adminbe.onrender.com/products', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

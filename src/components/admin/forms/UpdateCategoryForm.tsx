@@ -36,7 +36,7 @@ const UpdateCategoryForm = ({
 
         const postPromise = axios
             .put(
-                `http://localhost:3000/categories/${selectedCategory._id}`,
+                `https://adminbe.onrender.com/categories/${selectedCategory._id}`,
                 data
             )
             .then((res) => {
